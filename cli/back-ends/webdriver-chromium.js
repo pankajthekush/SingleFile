@@ -66,6 +66,8 @@ function getBrowserOptions(options) {
 		chromeOptions.addArguments("--disable-web-security");
 	}
 	chromeOptions.addArguments("--no-pings");
+	// to run as root no sandbox is requried in docker image
+	chromeOptions.addArguments("--no-sandbox");
 	if (!optionHeadless) {
 		if (options.browserDebug) {
 			chromeOptions.addArguments("--auto-open-devtools-for-tabs");
